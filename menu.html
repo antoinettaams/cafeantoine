@@ -1,0 +1,867 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Café Antoine - La cafette qui rassemble."
+        />
+        <meta
+            name="keywords"
+            content="café, pâtisserie, Benin, Café Antoine, coffee shop"
+        />
+        <meta name="author" content="Café Antoine" />
+        <link rel="canonical" href="https://cafeantoine.bj" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Café Antoine | La cafette qui rassemble"
+        />
+        <meta
+            property="og:description"
+            content="Découvrez un lieu convivial pour savourer un bon café et partager des moments uniques."
+        />
+        <meta
+            property="og:image"
+            content="https://cafeantoine.bj/assets/images/og-image.jpg"
+        />
+        <meta property="og:url" content="https://cafeantoine.bj" />
+        <meta property="og:site_name" content="Café Antoine" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Café Antoine | La cafette qui rassemble"
+        />
+        <meta
+            name="twitter:description"
+            content="Découvrez un lieu convivial pour savourer un bon café et partager des moments uniques."
+        />
+        <meta
+            name="twitter:image"
+            content="https://cafeantoine.bj/assets/images/og-image.jpg"
+        />
+
+        <!-- Favicon -->
+        <link rel="icon" href="assets/images/logo.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="assets/images/logo.png" />
+        <title>Café Antoine | La cafette qui rassemble</title>
+
+        <!-- Tailwind CSS -->
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- DaisyUI -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        <!-- Boxicons -->
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- Fonts Google -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Amatic+SC:wght@400;700&display=swap"
+        />
+        <!-- Polices et styles personnalisés -->
+        <style type="text/tailwindcss">
+            @theme {
+                --color-principal: #bb3b2b;
+                --color-secondaire: #903024;
+                --color-black: "#221e22";
+                --color-cream: #fffdf7;
+                --font-news: "News Cycle", sans-serif;
+                --font-amatic: "Amatic SC", cursive;
+            }
+
+            footer{
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body class="font-news bg-principal">
+        <!-- En tête -->
+        <header class="text-white text-xl border-b border-cream">
+            <div
+                class="container mx-auto flex justify-between items-center p-4"
+            >
+                <h1 class="text-2xl font-extrabold font-amatic">
+                    <a href="index.html">Café Antoine</a>
+                </h1>
+
+                <nav class="hidden md:flex gap-6 text-sm font-semibold">
+                    <a href="index.html">Accueil</a>
+                    <a href="about.html">À propos</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-4 text-sm font-semibold">
+                    <span class="hidden md:inline">+229 54 74 56 96</span>
+                    <i class="bx bx-cart-alt text-xl"></i>
+                    <i class="bx bx-user text-xl"></i>
+
+                    <!-- Bouton menu hamburger -->
+                    <button id="menu-toggle" class="md:hidden">
+                        <i class="bx bx-menu text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!--Menu déroulant -->
+            <nav
+                id="mobile-menu"
+                onchange="reloadPage()"
+                class="hidden md:hidden bg-white shadow-md"
+            >
+                <ul class="flex flex-col p-5 space-y-4">
+                    <li>
+                        <a
+                            href="index.html"
+                            class="block text-sm text-gray-700 hover:text-red-500"
+                            >Accueil</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="about.html"
+                            class="block text-sm text-gray-700 hover:text-red-500"
+                            >À propos</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="contact.html"
+                            class="block text-sm text-gray-700 hover:text-red-500"
+                            >Contact</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="menu.html"
+                            class="block text-sm text-gray-700 hover:text-red-500"
+                            >Menu</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Section Hero Animée -->
+        <section class="relative overflow-hidden bg-gradient-to-r from-secondaire to-principal text-cream py-16 md:py-24">
+        
+            <!-- Animation de fond --> 
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 left-0 w-32 h-32 bg-cream rounded-full mix-blend-overlay animate-float animation-delay-100"></div>
+                <div class="absolute top-1/4 right-1/4 w-24 h-24 bg-cream rounded-full mix-blend-overlay animate-float animation-delay-300"></div>
+                <div class="absolute bottom-1/3 left-1/3 w-20 h-20 bg-cream rounded-full mix-blend-overlay animate-float"></div>
+            </div>
+
+            <div class="container mx-auto px-4 text-center relative">
+        
+                <!-- Titre principal avec effet de rebond -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 font-amatic animate-bounce">
+                    Notre <span class="text-cream">Menu</span> Savoureux
+                </h1>
+        
+                <!-- Sous-titre avec apparition progressive -->
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-0 animate-fade-in animation-delay-300">
+                    Une expérience gustative qui éveillera vos papilles
+                </p>
+        
+            <!-- Icône animée flottante -->
+                <div class="floating inline-block animate-float animation-delay-500">
+                    <i class="bx bx-coffee-alt text-6xl text-cream"></i>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- Navigation -->
+        <nav class="sticky top-0 bg-cream shadow-md z-10 border-b border-principal">
+            
+            <div class="container mx-auto px-4">
+                
+                <div class="flex overflow-x-auto py-3 hide-scrollbar">
+                    
+                    <div class="flex space-x-1 md:space-x-3 mx-auto">
+                        
+                        <button onclick="filterMenu('all')" 
+                            class="category-btn flex-shrink-0 px-4 py-2 rounded-full font-bold transition-all duration-300 whitespace-nowrap
+                                   bg-principal text-cream hover:bg-secondaire">
+                            <i class="fas fa-utensils mr-2"></i>Tout le Menu
+                        </button>
+                    
+                        <button onclick="filterMenu('starters')" 
+                            class="category-btn flex-shrink-0 px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap
+                                   bg-white text-principal border border-principal hover:bg-principal hover:text-cream">
+                            <i class="fas fa-leaf mr-2"></i>Entrées
+                        </button>
+                    
+                        <button onclick="filterMenu('mains')" 
+                            class="category-btn flex-shrink-0 px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap
+                                   bg-white text-principal border border-principal hover:bg-principal hover:text-cream">
+                            <i class="fas fa-drumstick-bite mr-2"></i>Plats
+                        </button>
+                    
+                        <button onclick="filterMenu('desserts')" 
+                            class="category-btn flex-shrink-0 px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap
+                                   bg-white text-principal border border-principal hover:bg-principal hover:text-cream">
+                            <i class="fas fa-ice-cream mr-2"></i>Desserts
+                        </button>
+                    
+                        <button onclick="filterMenu('drinks')" 
+                            class="category-btn flex-shrink-0 px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap
+                                   bg-white text-principal border border-principal hover:bg-principal hover:text-cream">
+                            <i class="fas fa-glass-whiskey mr-2"></i>Boissons
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container mx-auto px-4 py-12">
+        <!-- Section menu -->
+            <section id="starters" class="mb-16">
+                
+                <h2 class="text-4xl font-bold mb-8 pb-2 inline-block border-b-2 border-principal font-amatic animate-fade-in">
+                    <i class="fas fa-leaf mr-3 text-principal"></i>Nos Entrées
+                </h2>
+                
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 
+                <div class="menu-item opacity-0 animate-fade-in bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="starters">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/salade.jpg" alt="Salade fraîche" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Salade mexicaine</h3>
+                            <span class="price-tag text-lg font-bold text-principal">3000f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Salade fraîche au poulet grillé, avocat et maïs, accompagnée d'une sauce onctueuse.</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-item opacity-0 animate-fade-in animation-delay-100 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="starters">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/sympa.jpg" alt="Soupe de légumes" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Salade sympa</h3>
+                            <span class="price-tag text-lg font-bold text-principal">2000f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Une salade qui vous pîque un sourire à chaque bouchée.</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 mt-10 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-item opacity-0 animate-fade-in animation-delay-200 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="starters">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/antoinaise.jpg" alt="Bruschetta" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Salade Antoinaise</h3>
+                            <span class="price-tag text-lg font-bold text-principal">1500f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Un mélange frais de thon, œufs, légumes croquants et olives, pour une touche ensoleillée.</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu plats princiâux -->
+        <section id="mains" class="mb-16">
+            
+            <h2 class="text-4xl font-bold mb-8 pb-2 inline-block border-b-2 border-principal font-amatic animate-fade-in">
+                <i class="fas fa-drumstick-bite mr-3 text-principal"></i>Plats Principaux
+            </h2>
+            
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="menu-item opacity-0 animate-fade-in bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="mains">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/rizz.jpg" alt="Steak frites" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Sautés de tripes de boeuf</h3>
+                            <span class="price-tag text-lg font-bold text-principal">2000f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Sautés de tripes de bœuf – Fondantes, savoureuses et mijotées à la perfection</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-item opacity-0 animate-fade-in animation-delay-100 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="mains">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/pate noir.jpg" alt="Pâtes carbonara" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Pâte noir</h3>
+                            <span class="price-tag text-lg font-bold text-principal">1500f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Pâtes noires aux légumes – Une explosion de saveurs</p>
+                        
+                        <button class="add-to-cart-btn w-full mt-10 bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-item opacity-0 animate-fade-in animation-delay-200 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="mains">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/patte.jpg" alt="Pizza" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Spaghetti Royal Sauté</h3>
+                            <span class="price-tag text-lg font-bold text-principal">2000f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Spaghettis, légumes sautés et viande tendre, un délice savoureux!</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desserts Section -->
+        <section id="desserts" class="mb-16">
+            
+            <h2 class="text-4xl font-bold mb-8 pb-2 inline-block border-b-2 border-principal font-amatic animate-fade-in">
+                <i class="fas fa-ice-cream mr-3 text-principal"></i>Desserts
+            </h2>
+            
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 
+                <div class="menu-item opacity-0 animate-fade-in bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="desserts">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/food3.jpg" alt="Fondant au chocolat" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Dèguè au mil</h3>
+                            <span class="price-tag text-lg font-bold text-principal">500f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Délice onctueux de semoule de mil et yaourt, pour une touche de fraîcheur authentique.</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-item opacity-0 animate-fade-in animation-delay-100 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="desserts">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/dessert.jpg" alt="Tarte aux fruits" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Brioches Choco-Fondantes</h3>
+                            <span class="price-tag text-lg font-bold text-principal">2000f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Tranches de brioche dorées, sublimées par un coulis onctueux de chocolat.</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-item opacity-0 animate-fade-in animation-delay-200 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="desserts">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/dèguè au couscous.jpg" alt="jus" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Dèguè au couscous</h3>
+                            <span class="price-tag text-lg font-bold text-principal">500f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Alliance parfaite de couscous moelleux et de yaourt onctueux pour un plaisir rafraîchissant.</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drinks Section -->
+        <section id="drinks">
+            
+            <h2 class="text-4xl font-bold mb-8 pb-2 inline-block border-b-2 border-principal font-amatic animate-fade-in">
+                <i class="fas fa-glass-cheers mr-3 text-principal"></i>Boissons
+            </h2>
+            
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 
+                <div class="menu-item opacity-0 animate-fade-in bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="drinks">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/tamarin.jpg" alt="Vin rouge" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Fresh Tama</h3>
+                            <span class="price-tag text-lg font-bold text-principal">500f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Tamarion frais, fais maison.</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+
+                <div class="menu-item opacity-0 animate-fade-in animation-delay-100 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="drinks">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/jus de pastèque.jpg" alt="Cocktail" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Rouge pastèque</h3>
+                            <span class="price-tag text-lg font-bold text-principal">700f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Jus à base de fruits frais fait maison</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+ 
+                <div class="menu-item opacity-0 animate-fade-in animation-delay-200 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-category="drinks">
+                    
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="assets/images/boisson.jpg" alt="Café" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    
+                    <div class="p-6">
+                        
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Guiness</h3>
+                            <span class="price-tag text-lg font-bold text-principal">700f</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-4">Prise de rafraîchissement et d'énergie</p>
+                        
+                        <button class="add-to-cart-btn w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-bold transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-plus mr-2"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Cart - Modifié -->
+    <div class="fixed bottom-6 right-6 z-50">
+        
+        <button id="cart-btn" class="bg-red-600 text-white p-4 rounded-full shadow-xl hover:bg-red-700 transition-all duration-300 relative group">
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span id="cart-count" class="absolute -top-2 -right-2 bg-white text-red-600 text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center border-2 border-red-600 transform group-hover:scale-110 transition-transform">0</span>
+            <span class="cart-pulse absolute inset-0 rounded-full bg-red-400 opacity-0 group-hover:opacity-30"></span>
+        </button>
+    </div>
+      
+     <!-- Footer -->
+     <footer class="footer-gradient text-white pt-12 pb-8">
+        
+        <div class="container mx-auto px-4">
+             
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+                 
+                <div class="md:col-span-2">
+                    
+                    <div class="flex items-center mb-6">
+                        
+                        <h2 class="text-3xl font-bold font-amatic">
+                            Café <span class="text-amber-50">Antoine</span>
+                        </h2>
+
+                    </div>
+                    
+                    <p class="text-lg mb-6 max-w-md text-amber-50">
+                        Café Antoine est plus qu'un café, c'est un lieu de rencontre et de partage pour les amateurs de saveurs uniques.
+                    </p>
+                    
+                    <div class="flex gap-4">
+                        
+                        <a href="https://www.facebook.com/cafeantoinebenin" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                            <i class="bx bxl-facebook text-xl"></i>
+                        </a>
+                        
+                        <a href="https://instagram.com/cafeantoinebenin?igshid=NGExMmI2YTkyZg==" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                            <i class="bx bxl-instagram text-xl"></i>
+                        </a>
+                        
+                        <a href="https://wa.me/22954745696" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                            <i class="bx bxl-whatsapp text-xl"></i>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@cafeantoine?_t=8dhuz5IFmvm&_r=1" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                            <i class="bx bxl-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Colonne 2 - Navigation -->
+                <div>
+                    
+                    <h2 class="text-xl font-bold mb-6 pb-2 border-b border-cream inline-block font-amatic">
+                        Liens rapides
+                    </h2>
+                    
+                    <ul class="space-y-3">
+                        
+                        <li>
+                            <a href="index.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                Accueil
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="a-propos.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                À propos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="menu.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                Menu
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 3 - Services -->
+                <div>
+                    
+                    <h3 class="text-xl font-bold mb-6 pb-2 border-b border-cream inline-block font-amatic">
+                        Nos services
+                    </h3>
+                    
+                    <ul class="space-y-3">
+                        
+                        <li>
+                            <a href="#" class="footer-link text-cream hover:text-red transition-colors duration-300 flex items-center">
+                                <i class="bx bx-coffee text-amber-50 mr-2"></i> Café & Pâtisseries
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="footer-link text-amber-50 hover:text-white transition-colors duration-300 flex items-center">
+                                <i class="bx bx-bowl-rice text-amber-50 mr-2"></i> Brunch & Dîners
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="footer-link text-amber-50 hover:text-white transition-colors duration-300 flex items-center">
+                                <i class="bx bx-calendar-event text-amber-50 mr-2"></i> Événements privés
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="footer-link text-amber-50 hover:text-white transition-colors duration-300 flex items-center">
+                                <i class="bx bx-package text-amber-50 mr-2"></i> Livraison
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 4 - Contact -->
+                <div>
+                    
+                    <h3 class="text-xl font-bold mb-6 pb-2 border-b border-amber-50 inline-block font-amatic">
+                        Contact
+                    </h3>
+                    
+                    <ul class="space-y-4">
+                        
+                        <li class="flex items-start">
+                            <i class="bx bx-map text-amber-50 mt-1 mr-3"></i>
+                            <span class="text-amber-50">Cotonou Fidjrossè</span>
+                        </li>
+                        
+                        <li class="flex items-start">
+                            <i class="bx bx-map text-amber-50 mt-1 mr-3"></i>
+                            <span class="text-amber-50">Benin, Calavi</span>
+                        </li>
+                        
+                        <li class="flex items-center">
+                            <i class="bx bx-phone text-amber-50 mr-3"></i>
+                            <span class="text-amber-50">+229 54 74 56 96</span>
+                        </li>
+                        
+                        <li class="flex items-center">
+                            <i class="bx bx-envelope text-amber-50 mr-3"></i>
+                            <span class="text-amber-50">contact@cafe-antoine.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright et mentions légales -->
+            <div class="border-t border-amber-50/20 pt-6">
+                
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    
+                    <p class="text-amber-50/80 mb-4 md:mb-0 text-center md:text-left">
+                        © <span id="current-year"></span> Café Antoine. Tous droits réservés.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        
+                        <a href="#" class="footer-link text-amber-50/80 hover:text-amber-50 text-sm transition-colors duration-300">
+                            Mentions légales
+                        </a>
+                        
+                        <a href="#" class="footer-link text-amber-50/80 hover:text-amber-50 text-sm transition-colors duration-300">
+                            Politique de confidentialité
+                        </a>
+                        
+                        <a href="#" class="footer-link text-amber-50/80 hover:text-amber-50 text-sm transition-colors duration-300">
+                            CGV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuToggle.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            function reloadPage() {
+                location.reload();
+            }
+        // Configuration des animations dans Tailwind
+        tailwind.config = {
+            
+            theme: {
+                
+                extend: {
+                    
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce': 'bounce 2s infinite'
+                    },
+                    
+                    keyframes: {
+                        
+                        fadeIn: {
+                            'from': { opacity: '0', transform: 'translateY(20px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        bounce: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+            
+        // Gestion du panier
+        let cartItems = [];
+            
+        function updateCartCount() {
+            const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+            const cartCount = document.getElementById('cart-count');
+            cartCount.textContent = totalItems;
+                
+        // Animation du compteur
+        cartCount.classList.add('animate-bounce');
+            setTimeout(() => {
+                cartCount.classList.remove('animate-bounce');
+            }, 500);
+            }
+
+        // Gestion de l'ajout au panier
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.menu-item');
+                const itemName = card.querySelector('h3').textContent;
+                const itemPrice = card.querySelector('.price-tag').textContent;
+                    
+        // Animation du bouton
+            this.innerHTML = '<i class="fas fa-check mr-2"></i> Ajouté !';
+            this.classList.remove('bg-red-600', 'hover:bg-red-700');
+            this.classList.add('bg-black');
+                    
+        // Animation du panier
+            const cartBtn = document.getElementById('cart-btn');
+            cartBtn.classList.add('animate-ping-fast');
+            setTimeout(() => {
+                cartBtn.classList.remove('animate-ping-fast');
+                }, 500);
+                    
+        // Ajout au panier
+            const existingItem = cartItems.find(item => item.name === itemName);
+            if (existingItem) {
+                 existingItem.quantity++;
+                    } else {
+                        cartItems.push({
+                            name: itemName,
+                            price: itemPrice,
+                            quantity: 1
+                        });
+                    }
+                    
+                    updateCartCount();
+                    
+        // Réinitialisation du bouton
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-plus mr-2"></i> Ajouter';
+                this.classList.remove('bg-black');
+                this.classList.add('bg-red-600', 'hover:bg-red-700');
+            }, 1500);
+        });
+    });
+
+        // Filtrage du menu
+            function filterMenu(category) {
+                const menuItems = document.querySelectorAll('.menu-item');
+                const categoryBtns = document.querySelectorAll('.category-btn');
+                
+        // Mise à jour des boutons de catégorie
+            categoryBtns.forEach(btn => {
+                if (btn.textContent.includes('Tout le Menu') && category === 'all') {
+                    btn.classList.remove('bg-white', 'text-principal', 'border');
+                    btn.classList.add('bg-principal', 'text-cream');
+                } else if (btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.remove('bg-white', 'text-principal', 'border');
+                    btn.classList.add('bg-principal', 'text-cream');
+                } else {
+                    btn.classList.remove('bg-principal', 'text-cream');
+                    btn.classList.add('bg-white', 'text-principal', 'border');
+                }
+            });
+                
+        // Filtrage des éléments
+            menuItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+                });
+            }
+
+        // Animation des éléments au chargement
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuItems = document.querySelectorAll('.menu-item');
+                menuItems.forEach((item, index) => {
+                    item.style.animationDelay = `${index * 0.1}s`;
+                });
+                
+                // Mettre à jour l'année dans le footer
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            });
+
+        // Animation des icônes sociales
+        document.querySelectorAll('.social-icon').forEach(icon => {
+                
+            icon.addEventListener('mouseenter', function() {
+                    
+                this.querySelector('i').classList.add('transform', 'scale-110');
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.querySelector('i').classList.remove('transform', 'scale-110');
+                });
+            });
+    </script>
+</body>
+</html>

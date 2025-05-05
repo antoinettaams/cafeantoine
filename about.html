@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <!-- Head reste inchangé -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Café Antoine - La cafette qui rassemble autour de délicieux cafés et pâtisseries."
+        />
+        <meta
+            name="keywords"
+            content="café, pâtisserie, Benin, Café Antoine, coffee shop"
+        />
+        <meta name="author" content="Café Antoine" />
+        <link rel="canonical" href="https://cafeantoine.bj" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Café Antoine | La cafette qui rassemble"
+        />
+        <meta
+            property="og:description"
+            content="Découvrez un lieu convivial pour savourer un bon café et partager des moments uniques."
+        />
+        <meta
+            property="og:image"
+            content="https://cafeantoine.bj/assets/images/og-image.jpg"
+        />
+        <meta property="og:url" content="https://cafeantoine.bj" />
+        <meta property="og:site_name" content="Café Antoine" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Café Antoine | La cafette qui rassemble"
+        />
+        <meta
+            name="twitter:description"
+            content="Découvrez un lieu convivial pour savourer un bon café et partager des moments uniques."
+        />
+        <meta
+            name="twitter:image"
+            content="https://cafeantoine.bj/assets/images/og-image.jpg"
+        />
+
+        <!-- Favicon -->
+        <link rel="icon" href="assets/images/logo.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="assets/images/logo.png" />
+
+        <title>A propos | Café Antoine</title>
+        <!-- Tailwind CSS -->
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+        <!-- DaisyUI -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        <!-- Boxicons -->
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- Fonts Google -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Amatic+SC:wght@400;700&display=swap"
+        />
+        <!-- Polices et styles personnalisés -->
+        <style type="text/tailwindcss">
+            @theme {
+                --color-principal: #bb3b2b;
+                --color-secondaire: #903024;
+                --color-black: "#221e22";
+                --color-cream: #fffdf7;
+                --font-news: "News Cycle", sans-serif;
+                --font-amatic: "Amatic SC", cursive;
+            }
+
+            footer{
+                background-color: black;
+            }
+            
+            .objectifs-section {
+              padding: 5rem 2rem;
+              background: #bb3b2b;
+              text-align: center;
+            }
+        
+            .section-title {
+              font-size: 2.5rem;
+              color: #f0f3ee;
+              margin-bottom: 4rem;
+              opacity: 0;
+              transform: translateY(20px);
+            }
+        
+            .objectifs-container {
+              display: grid;
+              gap: 2rem;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+        
+            .objectif-card {
+              background: white;
+              padding: 2rem;
+              border-radius: 15px;
+              box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+              opacity: 0;
+              transform: translateY(20px);
+              transition: transform 0.3s ease;
+            }
+        
+            .objectif-card:hover {
+              transform: translateY(-5px);
+            }
+        
+            .icone-container {
+              width: 80px;
+              height: 80px;
+              background: #8aa878;
+              border-radius: 50%;
+              margin: 0 auto 1rem;
+              display: grid;
+              place-items: center;
+              font-size: 2rem;
+              color: rgb(247, 243, 243);
+            }
+        
+            @keyframes fadeInUp {
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+        
+            .animate-title {
+              animation: fadeInUp 0.8s forwards;
+            }
+        
+            .animate-card {
+              animation: fadeInUp 0.8s forwards;
+              animation-delay: 0.3s;
+            }
+        
+            .objectif-card:nth-child(2) {
+              animation-delay: 0.5s;
+            }
+        
+            .objectif-card:nth-child(3) {
+              animation-delay: 0.7s;
+            }
+        
+            @media (min-width: 768px) {
+              .objectifs-container {
+                grid-template-columns: repeat(3, 1fr);
+              }
+            }
+        </style>
+    </head>
+
+<body class="font-news bg-principal">
+    <!-- Header reste inchangé -->
+        <!-- En tête -->
+        <header class="text-white text-xl border-b border-cream">
+            <div
+                class="container mx-auto flex justify-between items-center p-4"
+            >
+                <h1 class="text-2xl font-extrabold font-amatic">
+                    <a href="index.html">Café Antoine</a>
+                </h1>
+    
+                <nav class="hidden md:flex gap-6 text-sm font-semibold">
+                    <a href="index.html">Accueil</a>
+                    <a href="about.html">À propos</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+    
+                <div class="flex items-center gap-4 text-sm font-semibold">
+                    <span class="hidden md:inline">+229 54 74 56 96</span>
+                    <i class="bx bx-cart-alt text-xl"></i>
+                    <i class="bx bx-user text-xl"></i>
+    
+                    <!-- Bouton menu hamburger -->
+                    <button id="menu-toggle" class="md:hidden">
+                        <i class="bx bx-menu text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+    
+            <!--Menu déroulant -->
+            <nav
+                id="mobile-menu"
+                onchange="reloadPage()"
+                class="hidden md:hidden bg-white shadow-md"
+            >
+                <ul class="flex flex-col p-5 space-y-4">
+                    <li>
+                        <a
+                            href="index.html"
+                            class="block text-sm text-gray-700 hover:text-red-500"
+                            >Accueil</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="about.html"
+                            class="block text-sm text-gray-700 hover:text-red-500"
+                            >À propos</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="contact.html"
+                            class="block text-sm text-gray-700 hover:text-red-500"
+                            >Contact</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="menu.html"
+                            class="block text-sm text-gray-700 hover:text-red-500"
+                            >Menu</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Section Hero -->
+            <section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 z-0">
+                    <img src="assets/images/cafe1.jpg" alt="Intérieur du café" 
+                         class="w-full h-full object-cover opacity-40 animate-fade-in"/>
+                </div>
+                <div class="relative z-10 text-center px-4 animate-slide-up">
+                    <h2 class="font-amatic text-6xl md:text-8xl text-secondaire mb-6">
+                        Notre Histoire
+                    </h2>
+                    <p class="text-xl md:text-2xl max-w-2xl mx-auto text-cream">
+                        Découvrez l'univers chaleureux de Café Antoine
+                    </p>
+                </div>
+            </section>
+        
+            <!-- Section Notre Histoire -->
+            <section class="py-16 bg-cream">
+                <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-fade-in-left">
+                        <img src="assets/images/cafe5.jpg" alt="Grains de café" 
+                             class="rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-500"/>
+                    </div>
+                    <div class="animate-fade-in-right">
+                        <h3 class="font-amatic text-4xl text-secondaire mb-6">
+                            Depuis 2015...
+                        </h3>
+                        <p class="text-black mb-6">
+                            Fondé par Antoine Dossou, passionné de café et de rencontres humaines, 
+                            notre établissement est devenu un lieu incontournable de Cotonou.
+                        </p>
+                        <div class="flex items-center gap-4 mb-4">
+                            <i class="bx bx-coffee text-3xl text-principal"></i>
+                            <p class="text-black">Cafés 100% bio provenant de plantations locales</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="bx bx-heart text-3xl text-principal"></i>
+                            <p class="text-black">Engagés dans le développement durable</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Nouvelle Section Missions/Objectifs -->
+            <section class="objectifs-section">
+                <h2 class="section-title animate-title">Notre Mission</h2>
+                
+                <div class="objectifs-container">
+                    <div class="objectif-card animate-card">
+                        <div class="icone-container">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Produits Frais</h3>
+                        <p>Des ingrédients locaux et bio sélectionnés avec soin</p>
+                    </div>
+        
+                    <div class="objectif-card animate-card">
+                        <div class="icone-container">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Passion Partage</h3>
+                        <p>Transmettre notre amour du bon café depuis 2015</p>
+                    </div>
+        
+                    <div class="objectif-card animate-card">
+                        <div class="icone-container">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Communauté</h3>
+                        <p>Un lieu de rencontre et de partage pour tous</p>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Section Équipe -->
+            <section class="py-16 bg-secondaire">
+                <div class="container mx-auto px-4 text-center">
+                    <h3 class="font-amatic text-4xl text-cream mb-12 animate-fade-in">
+                        Rencontrez Notre Équipe
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-cream p-6 rounded-lg transform hover:-translate-y-2 transition-all duration-300">
+                            <img src="assets/images/cafe3.jpg" alt="Barista" 
+                                 class="w-32 h-32 rounded-full mx-auto mb-4"/>
+                            <h4 class="font-amatic text-3xl text-secondaire">Boris</h4>
+                            <p class="text-black">Les chefs Cusiniers</p>
+                        </div>
+
+                        <div class="bg-cream p-6 rounded-lg transform hover:-translate-y-2 transition-all duration-300">
+                            <img src="assets/images/ananas.jfif" alt="Barista" 
+                                 class="w-32 h-32 rounded-full mx-auto mb-4"/>
+                            <h4 class="font-amatic text-3xl text-secondaire">DOSSOU Antoine</h4>
+                            <p class="text-black">Le Fondateur du Café</p>
+                        </div>
+        
+                        <div class="bg-cream p-6 rounded-lg transform hover:-translate-y-2 transition-all duration-300">
+                            <img src="assets/images/orange.jpg" alt="Barista" 
+                                 class="w-32 h-32 rounded-full mx-auto mb-4"/>
+                            <h4 class="font-amatic text-3xl text-secondaire">Amina</h4>
+                            <p class="text-black">Chef Cusinière</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Section Témoignages -->
+            <section class="py-16 bg-principal">
+                <div class="container mx-auto px-4">
+                    <h3 class="font-amatic text-4xl text-cream text-center mb-12 animate-fade-in">
+                        Ce qu'ils disent de nous
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-cream p-6 rounded-lg transform hover:rotate-1 transition-transform duration-300">
+                            <p class="text-black italic mb-4">"Je suis tombé amoureux de Café Antoine dès ma première visite ! L'atmosphère est chaleureuse et accueillante, et le dèguè est tout simplement délicieux. Je recommande vivement ce café à tout le monde !"</p>
+                            <div class="flex items-center gap-4">
+                                <img src="assets/images/cafe2.jpg" alt="Client" 
+                                     class="w-12 h-12 rounded-full"/>
+                                <div>
+                                    <h4 class="font-bold text-black">Kévin D.</h4>
+                                    <p class="text-sm text-gray-600">Client fidèle</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-cream p-6 rounded-lg transform hover:rotate-1 transition-transform duration-300">
+                            <p class="text-black italic mb-4">"Café antoine est mon nouveau lieu de prédilection pour déjeuner et me divertir depuis deux mois. L'ambiance est parfaite pour se divertir en communauté. Et bien sûr, le dèguè antoinais, ce dèguè est excellent !"</p>
+                            <div class="flex items-center gap-4">
+                                <img src="assets/images/food7.jpg" alt="Client" 
+                                     class="w-12 h-12 rounded-full"/>
+                                <div>
+                                    <h4 class="font-bold text-black">Boris DOSSOU</h4>
+                                    <p class="text-sm text-gray-600">Client fidèle</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- CTA -->
+            <section class="bg-secondaire py-12 text-center animate-pulse">
+                <div class="container mx-auto px-4">
+                    <h3 class="font-amatic text-4xl text-cream mb-6">
+                        Envie de nous rejoindre ?
+                    </h3>
+                    <a href="contact.html" class="bg-cream text-principal px-8 py-3 rounded-full 
+                       hover:bg-principal hover:text-cream transition-colors duration-300">
+                        Contactez-nous
+                    </a>
+                </div>
+            </section>
+        </main>
+
+    <!-- Footer reste inchangé -->
+    
+    <footer class="footer-gradient text-white pt-12 pb-8">
+        
+        <div class="container mx-auto px-4">
+             
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+                 
+                <div class="md:col-span-2">
+                    
+                    <div class="flex items-center mb-6">
+                        
+                        <h2 class="text-3xl font-bold font-amatic">
+                            Café <span class="text-amber-50">Antoine</span>
+                        </h2>
+
+                    </div>
+                    
+                    <p class="text-lg mb-6 max-w-md text-amber-50">
+                        Café Antoine est plus qu'un café, c'est un lieu de rencontre et de partage pour les amateurs de saveurs uniques.
+                    </p>
+                    
+                    <div class="flex gap-4">
+                        
+                        <a href="https://www.facebook.com/cafeantoinebenin" class="social-icon w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center hover:bg-amber-100">
+                            <i class="bx bxl-facebook text-xl text-red-800"></i>
+                        </a>
+                        
+                        <a href="https://instagram.com/cafeantoinebenin?igshid=NGExMmI2YTkyZg==" class="social-icon w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center hover:bg-amber-100">
+                            <i class="bx bxl-instagram text-xl text-red-800"></i>
+                        </a>
+                        
+                        <a href="https://wa.me/22954745696" class="social-icon w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center hover:bg-amber-100">
+                            <i class="bx bxl-whatsapp text-xl text-red-800"></i>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@cafeantoine?_t=8dhuz5IFmvm&_r=1" class="social-icon w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center hover:bg-amber-100">
+                            <i class="bx bxl-tiktok text-xl text-red-800"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Colonne 2 - Navigation -->
+                <div>
+                    
+                    <h2 class="text-xl font-bold mb-6 pb-2 border-b border-cream inline-block font-amatic">
+                        Liens rapides
+                    </h2>
+                    
+                    <ul class="space-y-3">
+                        
+                        <li>
+                            <a href="index.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                Accueil
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="a-propos.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                À propos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="menu.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                Menu
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 3 - Services -->
+                <div>
+                    
+                    <h3 class="text-xl font-bold mb-6 pb-2 border-b border-cream inline-block font-amatic">
+                        Nos services
+                    </h3>
+                    
+                    <ul class="space-y-3">
+                        
+                        <li>
+                            <a href="#" class="footer-link text-cream hover:text-red transition-colors duration-300 flex items-center">
+                                <i class="bx bx-coffee text-amber-50 mr-2"></i> Café & Pâtisseries
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="footer-link text-amber-50 hover:text-white transition-colors duration-300 flex items-center">
+                                <i class="bx bx-bowl-rice text-amber-50 mr-2"></i> Brunch & Dîners
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="footer-link text-amber-50 hover:text-white transition-colors duration-300 flex items-center">
+                                <i class="bx bx-calendar-event text-amber-50 mr-2"></i> Événements privés
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="footer-link text-amber-50 hover:text-white transition-colors duration-300 flex items-center">
+                                <i class="bx bx-package text-amber-50 mr-2"></i> Livraison
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 4 - Contact -->
+                <div>
+                    
+                    <h3 class="text-xl font-bold mb-6 pb-2 border-b border-amber-50 inline-block font-amatic">
+                        Contact
+                    </h3>
+                    
+                    <ul class="space-y-4">
+                        
+                        <li class="flex items-start">
+                            <i class="bx bx-map text-amber-50 mt-1 mr-3"></i>
+                            <span class="text-amber-50">Cotonou Fidjrossè</span>
+                        </li>
+                        
+                        <li class="flex items-start">
+                            <i class="bx bx-map text-amber-50 mt-1 mr-3"></i>
+                            <span class="text-amber-50">Benin, Calavi</span>
+                        </li>
+                        
+                        <li class="flex items-center">
+                            <i class="bx bx-phone text-amber-50 mr-3"></i>
+                            <span class="text-amber-50">+229 54 74 56 96</span>
+                        </li>
+                        
+                        <li class="flex items-center">
+                            <i class="bx bx-envelope text-amber-50 mr-3"></i>
+                            <span class="text-amber-50">contact@cafe-antoine.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright et mentions légales -->
+            <div class="border-t border-amber-50/20 pt-6">
+                
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    
+                    <p class="text-amber-50/80 mb-4 md:mb-0 text-center md:text-left">
+                        © <span id="current-year"></span> Café Antoine. Tous droits réservés.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        
+                        <a href="#" class="footer-link text-amber-50/80 hover:text-amber-50 text-sm transition-colors duration-300">
+                            Mentions légales
+                        </a>
+                        
+                        <a href="#" class="footer-link text-amber-50/80 hover:text-amber-50 text-sm transition-colors duration-300">
+                            Politique de confidentialité
+                        </a>
+                        
+                        <a href="#" class="footer-link text-amber-50/80 hover:text-amber-50 text-sm transition-colors duration-300">
+                            CGV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animations personnalisées -->
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .animate-fade-in-left {
+            animation: fadeInUp 1s ease-out, slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); }
+            to { transform: translateX(0); }
+        }
+
+        .animate-fade-in-right {
+            animation: fadeInUp 1s ease-out, slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(50px); }
+            to { transform: translateX(0); }
+        }
+    </style>
+</body>
+</html>

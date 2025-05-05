@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Café Antoine - La cafette qui rassemble autour de délicieux cafés et pâtisseries."
+        />
+        <meta
+            name="keywords"
+            content="café, pâtisserie, Benin, Café Antoine, coffee shop"
+        />
+        <meta name="author" content="Café Antoine" />
+        <link rel="canonical" href="https://cafeantoine.bj" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Café Antoine | La cafette qui rassemble"
+        />
+        <meta
+            property="og:description"
+            content="Découvrez un lieu convivial pour savourer un bon café et partager des moments uniques."
+        />
+        <meta
+            property="og:image"
+            content="https://cafeantoine.bj/assets/images/og-image.jpg"
+        />
+        <meta property="og:url" content="https://cafeantoine.bj" />
+        <meta property="og:site_name" content="Café Antoine" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Café Antoine | La cafette qui rassemble"
+        />
+        <meta
+            name="twitter:description"
+            content="Découvrez un lieu convivial pour savourer un bon café et partager des moments uniques."
+        />
+        <meta
+            name="twitter:image"
+            content="https://cafeantoine.bj/assets/images/og-image.jpg"
+        />
+
+        <!-- Favicon -->
+        <link rel="icon" href="assets/images/logo.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="assets/images/logo.png" />
+
+        <title>A propos | Café Antoine</title>
+        <!-- Tailwind CSS -->
+        <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+        <!-- DaisyUI -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        <!-- Boxicons -->
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- Fonts Google -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Amatic+SC:wght@400;700&display=swap"
+        />
+        <!-- Polices et styles personnalisés -->
+        <style type="text/tailwindcss">
+            @theme {
+                --color-principal: #bb3b2b;
+                --color-secondaire: #903024;
+                --color-black: "#221e22";
+                --color-cream: #fffdf7;
+                --font-news: "News Cycle", sans-serif;
+                --font-amatic: "Amatic SC", cursive;
+            }
+
+            footer{
+                background-color: black;
+            }
+        </style>
+    </head>
+     
+</html>
+<body class="font-news bg-principal">
+    <!-- En tête -->
+    <header class="text-white text-xl border-b border-cream">
+        <div
+            class="container mx-auto flex justify-between items-center p-4"
+        >
+            <h1 class="text-2xl font-extrabold font-amatic">
+                <a href="index.html">Café Antoine</a>
+            </h1>
+
+            <nav class="hidden md:flex gap-6 text-sm font-semibold">
+                <a href="index.html">Accueil</a>
+                <a href="about.html">À propos</a>
+                <a href="menu.html">Menu</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-4 text-sm font-semibold">
+                <span class="hidden md:inline">+229 54 74 56 96</span>
+                <i class="bx bx-cart-alt text-xl"></i>
+                <i class="bx bx-user text-xl"></i>
+
+                <!-- Bouton menu hamburger -->
+                <button id="menu-toggle" class="md:hidden">
+                    <i class="bx bx-menu text-3xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!--Menu déroulant -->
+        <nav
+        id="mobile-menu"
+        onchange="reloadPage()"
+        class="hidden md:hidden bg-white shadow-md"
+    >
+        <ul class="flex flex-col p-5 space-y-4">
+            <li>
+                <a
+                    href="index.html"
+                    class="block text-sm text-gray-700 hover:text-red-500"
+                    >Accueil</a
+                >
+            </li>
+            <li>
+                <a
+                    href="about.html"
+                    class="block text-sm text-gray-700 hover:text-red-500"
+                    >À propos</a
+                >
+            </li>
+            <li>
+                <a
+                    href="contact.html"
+                    class="block text-sm text-gray-700 hover:text-red-500 font-bold text-principal"
+                    >Contact</a
+                >
+            </li>
+            <li>
+                <a
+                    href="menu.html"
+                    class="block text-sm text-gray-700 hover:text-red-500"
+                    >Menu</a
+                >
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Section principale de contact -->
+<section
+    class="bg-principal text-cream py-10 min-h-[40vh] flex items-center justify-center"
+>
+    <div
+        class="flex flex-col md:flex-row justify-between items-center p-4 md:px-10 lg:px-40 gap-10"
+    >
+        <div class="text-left lg:w-1/2">
+            <p>
+                <svg
+                    width="100"
+                    height="20"
+                    viewBox="0 0 100 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M0,10 Q12.5,0 25,10 T50,10 T75,10 T100,10"
+                        stroke="#fffdf7"
+                        stroke-width="4"
+                        fill="none"
+                    />
+                </svg>
+            </p>
+            <h2 class="text-xl m-2">Nous contacter</h2>
+            <h2
+                class="text-5xl md:text-8xl font-bold m-2 text-black font-amatic"
+            >
+                CONTACTEZ-<br />NOUS
+            </h2>
+            <h3 class="text-xl lg:text-2xl m-2 mb-4">
+                Nous sommes à votre écoute pour toutes vos questions, réservations ou suggestions.
+            </h3>
+            <p class="flex justify-end">
+                <svg
+                    width="100"
+                    height="20"
+                    viewBox="0 0 100 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M0,10 Q12.5,0 25,10 T50,10 T75,10 T100,10"
+                        stroke="#fffdf7"
+                        stroke-width="4"
+                        fill="none"
+                    />
+                </svg>
+            </p>
+        </div>
+
+        <!-- Image de contact -->
+        <div class="flex items-center justify-end w-full lg:w-1/2">
+            <img
+                src="assets/images/cafe2.jpg"
+                alt="Image du café"
+                class="w-full h-full object-cover rounded-lg"
+            />
+        </div>
+    </div>
+</section>
+
+<!-- Formulaire de contact et informations -->
+<section class="bg-principal text-black py-10">
+    <div class="container mx-auto px-4 md:px-10 lg:px-40">
+        <div class="flex flex-col md:flex-row gap-10">
+            <!-- Informations de contact -->
+            <div class="w-full md:w-1/2 bg-cream p-6 rounded-lg">
+                <h2 class="text-4xl font-bold text-principal font-amatic mb-6">Nos coordonnées</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-principal rounded-full p-3 text-cream">
+                            <i class="bx bx-map text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-principal">Adresse</h3>
+                            <p class="text-gray-700">Cotonou Fidjrossè</p>
+                            <p class="text-gray-700">Benin, Calavi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-principal rounded-full p-3 text-cream">
+                            <i class="bx bx-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-principal">Téléphone</h3>
+                            <p class="text-gray-700">+229 54 74 56 96</p>
+                            <p class="text-gray-700">+229 65 89 32 14</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-principal rounded-full p-3 text-cream">
+                            <i class="bx bx-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-principal">Email</h3>
+                            <p class="text-gray-700">contact@cafeantoine.bj</p>
+                            <p class="text-gray-700">reservation@cafeantoine.bj</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="bg-principal rounded-full p-3 text-cream">
+                            <i class="bx bx-time-five text-xl text-center"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-principal">Horaires d'ouverture</h3>
+                            <p class="text-gray-700">Lundi - Vendredi: 13h00 - 00h00</p>
+                            <p class="text-gray-700">Samedi - Dimanche: 13h00 - 00h00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <h3 class="text-xl font-bold text-principal mb-3">Suivez-nous</h3>
+                        <div class="flex gap-4">
+                            <a href="https://www.facebook.com/cafeantoinebenin" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                                <i class="bx bxl-facebook text-xl text-white"></i>
+                            </a>
+                            
+                            <a href="https://instagram.com/cafeantoinebenin?igshid=NGExMmI2YTkyZg==" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                                <i class="bx bxl-instagram text-xl text-white"></i>
+                            </a>
+                            
+                            <a href="https://wa.me/22954745696" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                                <i class="bx bxl-whatsapp text-xl text-white"></i>
+                            </a>
+    
+                            <a href="https://www.tiktok.com/@cafeantoine?_t=8dhuz5IFmvm&_r=1" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                                <i class="bx bxl-tiktok text-xl text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Formulaire de contact -->
+            <div class="w-full md:w-1/2 bg-cream p-6 rounded-lg">
+                <h2 class="text-4xl font-bold text-principal font-amatic mb-6">Envoyez-nous un message</h2>
+                
+                <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="nom" class="block text-gray-700 mb-1">Nom</label>
+                            <input type="text" id="nom" name="nom" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-principal" placeholder="Votre nom" required>
+                        </div>
+                        
+                        <div>
+                            <label for="prenom" class="block text-gray-700 mb-1">Prénom</label>
+                            <input type="text" id="prenom" name="prenom" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-principal" placeholder="Votre prénom" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-principal" placeholder="Votre email" required>
+                    </div>
+                    
+                    <div>
+                        <label for="telephone" class="block text-gray-700 mb-1">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-principal" placeholder="Votre téléphone">
+                    </div>
+                    
+                    <div>
+                        <label for="sujet" class="block text-gray-700 mb-1">Sujet</label>
+                        <select id="sujet" name="sujet" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-principal">
+                            <option value="question">Question générale</option>
+                            <option value="reservation">Réservation</option>
+                            <option value="evenement">Organisation d'événement</option>
+                            <option value="reclamation">Réclamation</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-principal" placeholder="Votre message" required></textarea>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" id="newsletter" name="newsletter" class="mr-2">
+                        <label for="newsletter" class="text-gray-700">Je souhaite m'inscrire à la newsletter</label>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-principal hover:bg-secondaire text-cream font-bold py-3 px-4 rounded-lg transition-colors">
+                        Envoyer le message <i class="bx bx-send ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Carte et localisation -->
+<section class="bg-principal flex items-center justify-center">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.2801362393534!2d2.3642543740448407!3d6.35777442506896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10235700343f7691%3A0x2574f97dcad1cc8!2sCaf%C3%A9%20Antoine!5e0!3m2!1sfr!2sbj!4v1743547239729!5m2!1sfr!2sbj" width="955" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+</section>
+
+<!-- FAQ Section -->
+<section class="bg-principal py-10">
+    <div class="container mx-auto px-4 md:px-10 lg:px-40">
+        <h2 class="text-4xl font-bold text-cream font-amatic text-center mb-8">Questions fréquentes</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-cream p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-principal mb-3">Comment réserver une table ?</h3>
+                <p class="text-gray-700">Vous pouvez réserver une table par téléphone au +229 54 74 56 96, par email à reservation@cafeantoine.bj ou via notre formulaire de contact.</p>
+            </div>
+            
+            <div class="bg-cream p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-principal mb-3">Proposez-vous des options végétariennes ?</h3>
+                <p class="text-gray-700">Oui, nous proposons plusieurs options végétariennes dans notre menu. N'hésitez pas à demander à notre personnel pour plus de détails.</p>
+            </div>
+            
+            <div class="bg-cream p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-principal mb-3">Peut-on organiser des événements privés ?</h3>
+                <p class="text-gray-700">Absolument ! Nous proposons des services de restauration pour les événements privés et professionnels. Contactez-nous pour discuter de vos besoins spécifiques.</p>
+            </div>
+            
+            <div class="bg-cream p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-principal mb-3">Acceptez-vous les cartes de crédit ?</h3>
+                <p class="text-gray-700">Oui, nous acceptons les principales cartes de crédit ainsi que les paiements mobiles comme MTN Mobile Money et Moov Money.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+     <!-- Footer -->
+     <footer class="footer-gradient text-white pt-12 pb-8">
+        
+        <div class="container mx-auto px-4">
+             
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+                 
+                <div class="md:col-span-2">
+                    
+                    <div class="flex items-center mb-6">
+                        
+                        <h2 class="text-3xl font-bold font-amatic">
+                            Café <span class="text-amber-50">Antoine</span>
+                        </h2>
+
+                    </div>
+                    
+                    <p class="text-lg mb-6 max-w-md text-amber-50">
+                        Café Antoine est plus qu'un café, c'est un lieu de rencontre et de partage pour les amateurs de saveurs uniques.
+                    </p>
+                    
+                    <div class="flex gap-4">
+                        
+                        <a href="https://www.facebook.com/cafeantoinebenin" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                            <i class="bx bxl-facebook text-xl"></i>
+                        </a>
+                        
+                        <a href="https://instagram.com/cafeantoinebenin?igshid=NGExMmI2YTkyZg==" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                            <i class="bx bxl-instagram text-xl"></i>
+                        </a>
+                        
+                        <a href="https://wa.me/22954745696" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                            <i class="bx bxl-whatsapp text-xl"></i>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@cafeantoine?_t=8dhuz5IFmvm&_r=1" class="social-icon w-10 h-10 rounded-full bg-principal flex items-center justify-center hover:bg-secondaire">
+                            <i class="bx bxl-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Colonne 2 - Navigation -->
+                <div>
+                    
+                    <h2 class="text-xl font-bold mb-6 pb-2 border-b border-cream inline-block font-amatic">
+                        Liens rapides
+                    </h2>
+                    
+                    <ul class="space-y-3">
+                        
+                        <li>
+                            <a href="index.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                Accueil
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="a-propos.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                À propos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="menu.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                Menu
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html" class="footer-link text-cream hover:text-principal transition-colors duration-300">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 3 - Services -->
+                <div>
+                    
+                    <h3 class="text-xl font-bold mb-6 pb-2 border-b border-cream inline-block font-amatic">
+                        Nos services
+                    </h3>
+                    
+                    <ul class="space-y-3">
+                        
+                        <li>
+                            <a href="#" class="footer-link text-cream hover:text-red transition-colors duration-300 flex items-center">
+                                <i class="bx bx-coffee text-amber-50 mr-2"></i> Café & Pâtisseries
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="footer-link text-amber-50 hover:text-white transition-colors duration-300 flex items-center">
+                                <i class="bx bx-bowl-rice text-amber-50 mr-2"></i> Brunch & Dîners
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="footer-link text-amber-50 hover:text-white transition-colors duration-300 flex items-center">
+                                <i class="bx bx-calendar-event text-amber-50 mr-2"></i> Événements privés
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" class="footer-link text-amber-50 hover:text-white transition-colors duration-300 flex items-center">
+                                <i class="bx bx-package text-amber-50 mr-2"></i> Livraison
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 4 - Contact -->
+                <div>
+                    
+                    <h3 class="text-xl font-bold mb-6 pb-2 border-b border-amber-50 inline-block font-amatic">
+                        Contact
+                    </h3>
+                    
+                    <ul class="space-y-4">
+                        
+                        <li class="flex items-start">
+                            <i class="bx bx-map text-amber-50 mt-1 mr-3"></i>
+                            <span class="text-amber-50">Cotonou Fidjrossè</span>
+                        </li>
+                        
+                        <li class="flex items-start">
+                            <i class="bx bx-map text-amber-50 mt-1 mr-3"></i>
+                            <span class="text-amber-50">Benin, Calavi</span>
+                        </li>
+                        
+                        <li class="flex items-center">
+                            <i class="bx bx-phone text-amber-50 mr-3"></i>
+                            <span class="text-amber-50">+229 54 74 56 96</span>
+                        </li>
+                        
+                        <li class="flex items-center">
+                            <i class="bx bx-envelope text-amber-50 mr-3"></i>
+                            <span class="text-amber-50">contact@cafe-antoine.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright et mentions légales -->
+            <div class="border-t border-amber-50/20 pt-6">
+                
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    
+                    <p class="text-amber-50/80 mb-4 md:mb-0 text-center md:text-left">
+                        © <span id="current-year"></span> Café Antoine. Tous droits réservés.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        
+                        <a href="#" class="footer-link text-amber-50/80 hover:text-amber-50 text-sm transition-colors duration-300">
+                            Mentions légales
+                        </a>
+                        
+                        <a href="#" class="footer-link text-amber-50/80 hover:text-amber-50 text-sm transition-colors duration-300">
+                            Politique de confidentialité
+                        </a>
+                        
+                        <a href="#" class="footer-link text-amber-50/80 hover:text-amber-50 text-sm transition-colors duration-300">
+                            CGV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuToggle.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+
+            function reloadPage() {
+                location.reload();
+            }
+    </script>
+</body>
+</html>
